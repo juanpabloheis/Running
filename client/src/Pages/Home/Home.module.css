@@ -1,0 +1,67 @@
+/* Para celular */
+.container {
+    font-size: 1.2rem;
+    min-height: 100vh;
+    display: grid;
+    grid-template:
+        "navbar"     55px
+        "filters"    50px
+        "pagination" min-content
+        "dogs"       auto
+        "footer"     50px /
+        100vw;
+}
+  
+/* Para notebook */
+@media (min-width: 600px){
+    .container {
+        grid-template:
+            "navbar      navbar"     55px
+            "filters     pagination" 40px 
+            "filters     dogs"       auto
+            "footer      footer"     40px /
+            180px        auto;
+    }
+}
+
+/* Para monitor */
+@media (min-width: 900px){
+}
+
+.container > * {
+    text-align: center;
+}
+
+.navbar {
+    grid-area: navbar;
+    background-color: var(--primary-color);
+}
+
+.filters {
+    padding: 1em;
+    grid-area: filters;
+    background-color: var(--quaternary-color);
+    border-right: 1px solid var(--primary-color);
+/*     display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.dogs {
+    padding: 1em;
+    grid-area: dogs;
+    background-image: var(--theme-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination {
+    grid-area: pagination;
+    background-color: var(--quaternary-color);
+}
+
+.footer {
+    grid-area: footer;
+    background-color: var(--primary-color);
+}
